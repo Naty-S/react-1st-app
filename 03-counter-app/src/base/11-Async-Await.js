@@ -1,13 +1,14 @@
 // 
 
-export const getImg = async () => {
+export const getImagen = async () => {
+
   try {
-    // los 'await' solo se usan dentro de un 'async'
-    const prom = 'promesa sencilla';
-    const awaitt = await fetch('espera que termine el fetch antes de ejecutar lo que sigue');
-    // const resp = await resp.json(); // esperar a que termine porque tambien es promesa
-    console.log('termine de esperar a todo lo asyncrono:', prom, awaitt);
-  } catch (error) {
-    console.log('falle');
+    const apiKey = 'A8xMXqzieIHmtO3BjGLAtf1daSSDAv8K';
+    const resp = await fetch(`http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
+    const { data } = await resp.json();
+    const { url } = data.images.original;
+
+    return url;
   }
+  catch (error) { return 'No existe'; }
 }

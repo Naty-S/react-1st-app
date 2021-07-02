@@ -1,11 +1,11 @@
-import { retornaArreglo } from '../../base/07-deses-arr'
+import { getArr } from '../../base/07-Desestruct-Arr'
 
 
 describe('Pruebas en desestructuración', () => {
 
   test('debe de retornar un string y un número', () => {
 
-    const [letras, numeros] = retornaArreglo(); //['ABC', 123];
+    const [letras, numeros] = getArr(); //['ABC', 123];
 
     expect(letras).toBe('ABC');
     expect(typeof letras).toBe('string');

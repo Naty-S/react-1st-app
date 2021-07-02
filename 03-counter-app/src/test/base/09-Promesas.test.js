@@ -1,16 +1,15 @@
-import { getHeroeByIdAsync } from "../../base/09-promesas";
+import { getByIdAsync } from "../../base/09-Promesas";
 import heroes from '../../data/heroes';
 
 
 describe('Pruebas con promesas', () => {
 
-  test('getHeroeByIdAsync debe de retornar un Héroe async', (done) => {
+  test('getByIdAsync debe de retornar un Héroe async', (done) => {
 
     const id = 1;
 
-    getHeroeByIdAsync(id)
+    getByIdAsync(id)
       .then(heroe => {
-
         expect(heroe).toBe(heroes[0]);
         done();
       });
@@ -19,11 +18,12 @@ describe('Pruebas con promesas', () => {
   test('debe de obtener un error si el héroe por id no existe', (done) => {
 
     const id = 10;
-    getHeroeByIdAsync(id)
+    getByIdAsync(id)
       .catch(error => {
-
-        expect(error).toBe('No se pudo encontrar el héroe');
+        expect(error).toBe('No se encontro');
         done();
       });
   });
 });
+
+// El 'done' es para decirle que espere las tareas asincronas, sino siempre pasara la prueba

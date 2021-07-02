@@ -1,17 +1,16 @@
 import '@testing-library/jest-dom';
 
-import { getUser, getUsuarioActivo } from '../../base/05-funciones'
+import { getUser, getUsuarioActivo } from '../../base/05-Funciones'
 
 
-describe('Pruebas en 05-funciones', () => {
+describe('Pruebas en 05-Funciones', () => {
 
   test('getUser debe de retornar un objeto ', () => {
 
     const userTest = {
-      uid: 'ABC123',
-      username: 'El_Papi1502'
+      uid: 324,
+      uname: 'enyu'
     }
-
     const user = getUser();
 
     expect(user).toEqual(userTest);
