@@ -17,6 +17,7 @@ export const AddCategory = ({ setCategories }) => {
   return (
     // No es necesario el fragment <></> porque 'form' ya es un elemento agrupador
     <form onSubmit={handleSubmit}>
+      <p>{inputValue}</p>
       <input
         type="text"
         value={inputValue}

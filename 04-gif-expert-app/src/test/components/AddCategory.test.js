@@ -10,7 +10,7 @@ describe('Pruebas en <AddCategory />', () => {
     let wrapper = shallow( <AddCategory setCategories={ setCategories } /> );
 
     beforeEach( () => {
-        jest.clearAllMocks();
+        jest.clearAllMocks(); // Limpiar simulaciones u otros moncks
         wrapper = shallow( <AddCategory setCategories={ setCategories } /> );
     });
 
@@ -47,7 +47,7 @@ describe('Pruebas en <AddCategory />', () => {
         // 3. setCategories se debe de haber llamado
         expect( setCategories ).toHaveBeenCalled();
         expect( setCategories ).toHaveBeenCalledTimes(1);
-        expect( setCategories ).toHaveBeenCalledWith( expect.any(Function)  );
+        expect( setCategories ).toHaveBeenCalledWith( expect.any(Function)  ); // para verificar que se llamo el setCategories
 
         // 4. el valor del input debe de estar ''
         expect( wrapper.find('input').prop('value') ).toBe('');
