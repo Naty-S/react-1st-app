@@ -4,6 +4,7 @@ import '../02-useEffect/effects.css';
 
 export const FocusScreen = () => {
 
+    // referencia mutable
     const inputRef = useRef();
     // console.log(ref);
 
@@ -16,21 +17,14 @@ export const FocusScreen = () => {
         <div>
             <h1>Focus Screen</h1>
             <hr />
-
             <input 
                 ref={ inputRef }
                 className="form-control"
                 placeholder="Su nombre"
             />
-
-
-            <button 
-                className="btn btn-outline-primary mt-5"
-                onClick={ handleClick }
-            >
+            <button className="btn btn-outline-primary mt-5" onClick={ handleClick }>
                 Focus
             </button>
-
         </div>
     )
 }
