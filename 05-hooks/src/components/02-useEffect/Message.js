@@ -13,6 +13,7 @@ export const Message = () => {
         window.addEventListener('mousemove', mouseMove );
         
         // cuando el componente se desmonta/deja de existir, para limpieza, eficiencia de mem
+        // Man remuevelo porque se crea uno cada vez que se monta el componente
         return () => {window.removeEventListener('mousemove', mouseMove );}
     }, [])
 
